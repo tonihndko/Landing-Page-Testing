@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Shift Cipher (RSC)</title>
+    <meta name="description" content="Aplikasi web untuk enkripsi dan dekripsi menggunakan algoritma Reverse Shift Cipher.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h1>Reverse Shift Cipher</h1>
+            <p>Enkripsi & Dekripsi dengan modifikasi Caesar Cipher dan Transposisi.</p>
+        </header>
+
+        <main class="glass-panel">
+            <div class="input-group">
+                <label for="inputText">Teks Masukan</label>
+                <textarea id="inputText" placeholder="Masukkan teks (plaintext atau ciphertext) di sini..."></textarea>
+            </div>
+
+            <div class="controls">
+                <div class="key-group">
+                    <label for="keyInput">Nilai Kunci (Key)</label>
+                    <input type="number" id="keyInput" value="3" min="0">
+                </div>
+                <div class="actions">
+                    <button id="btnEncrypt" class="btn primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        Enkripsi
+                    </button>
+                    <button id="btnDecrypt" class="btn secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-unlock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+                        Dekripsi
+                    </button>
+                </div>
+            </div>
+
+            <div class="visualization-container" id="visualizationContainer" style="display: none;">
+                <h3>Visualisasi Proses</h3>
+                <div class="visual-steps" id="visualSteps"></div>
+            </div>
+
+            <div class="output-group">
+                <div class="output-header">
+                    <label for="outputText">Hasil</label>
+                    <button id="btnCopy" class="btn-icon" title="Salin Teks">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                        Salin
+                    </button>
+                </div>
+                <textarea id="outputText" readonly placeholder="Hasil proses akan muncul di sini..."></textarea>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
